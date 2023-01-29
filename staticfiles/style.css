@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+}
+
+#navbar {
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: top 0.3s;
+    padding-left: 1%;
+}
+
+#navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: .5%;
+    text-decoration: none;
+    font-size: 25px;
+}
+#navbar-right-site{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 1%;
+    padding: .5%;
+    color: black;
+}
+#navbar-right-site svg{
+    margin-left: 10px;
+    border-radius: 50%;
+    padding: 10px;
+}
+#navbar-right-site svg:hover{
+    background-color: #CCCCCC;
+}
+.poster{
+    width: 25%;
+    fill: white;
+    display: block;
+    margin: auto;
+}
+header{
+    height:85vh;
+    padding-top: 60px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-image: url('images/background.jpg');
+} 
+
+
+#search-input-1{
+    width: 50%;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    padding: 20px;
+    padding-left: 50px;
+}
+
+
+
+#search-section{
+    width: 100%;
+}
+#main-search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+}
+#main-search svg{
+    z-index: 1;
+    position: inherit;
+    left: 40px;
+    color: #B3B3B3;
+
+}
+#random-surai{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#random-surai button{
+    margin-top: 40px;
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#random-surai button a{
+    color: #272727;
+    text-decoration: none;
+}
+#random-surai button:hover a{
+    color: #404040;
+}
+#radio-section{
+    width: 100%;
+    top: 10vh;
+}
+#radio-section button{
+    float: right;
+    border: none;
+    background: none;
+    border-radius: 5px;
+    margin-right: 1%;
+}
+#radio-section button:hover{
+    background-color: rgba(0, 0, 0, .5);
+}
+#radio-section button{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+#rencent-button{
+    border: 1px solid;
+    background: none;
+}
+.menu-wrapper {
+	position: relative;
+	max-width: 100%;
+	overflow-x: scroll;
+}
+.menu-wrapper .menu{
+    padding: 0;
+    margin: 0;
+	white-space: nowrap;
+}
+.menu-wrapper .menu .item {
+    display: inline-block;
+    border: 1px solid #EBEEF0;
+    border-radius: 4px;
+    margin: 10px;
+    transition: .3s;
+}
+.menu-wrapper .menu .item a{
+    text-decoration: none;
+    color: black;
+}
+.menu-wrapper .menu .item:hover{
+    border: 1px solid #2CA4AB;
+}
+#surah #home{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#surah a{
+    text-decoration: none;
+    color: black;
+}
+#surah .main-card{
+    display: flex; 
+    justify-content: space-between; 
+    border: 1px solid #EBEEF0;
+    border-radius: 4px; 
+    padding: 20px; 
+    margin: 10px;
+}
+#surah .main-card .square{
+    background-color: #F4F5F6;
+    width: 50px; 
+    height: 50px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transform: rotate(45deg);
+    border-radius: 5px;
+}
+#surah .main-card:hover .square{
+    background-color: #2CA4AB;
+    color: white;
+}
+#surah .main-card:hover{
+    border: 1px solid #2CA4AB;
+}
+#surah .ayas{
+    color: #666666;
+}
+#surah .main-card:hover .ayas{
+    color: #2CA4AB;
+}
+@media only screen and (max-width: 800px) {
+    #surah #home {
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    #surah #home {
+        grid-template-columns: repeat(1,1fr);
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #radio-section button {
+        font-size: 10px;
+    }
+    #radio-section button svg{
+        width: 10px;
+    }
+    #main-search svg{
+        z-index: 1;
+        position: inherit;
+        width: 10px;
+        color: #B3B3B3;
+    }
+    #random-surai button{
+        margin-top: 40px;
+        margin-left: 10px;
+        background-color: white;
+        border: none;
+        border-radius: 50px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 10px;
+        font-weight: 600;
+    }
+  }
+@media only screen and (max-width: 800px) {
+    #search-input-1 {
+        width: 80%;
+        padding: 10px;
+        font-size: 10px;
+        padding-left: 50px;
+    }   
+    
+  }

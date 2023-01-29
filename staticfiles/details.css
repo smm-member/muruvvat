@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+#navbar {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: top 0.3s;
+    padding-left: 1%;
+}
+
+#navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: .5%;
+    text-decoration: none;
+    font-size: 25px;
+}
+#navbar-right-site{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: 1%;
+    padding: .5%;
+    color: black;
+}
+#navbar-right-site svg{
+    margin-left: 10px;
+    border-radius: 50%;
+    padding: 10px;
+}
+#navbar-right-site svg:hover{
+    background-color: #CCCCCC;
+}
+.surah-audio{
+    float: right;
+    border: none;
+    background: none;
+    color: #2CA4AB;
+    padding: 10px;
+    border-radius: 4px;
+}
+.surah-audio:hover{
+    background-color: rgba(0, 0, 0, .2);
+}
+#main-detail{
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+    #main-detail {
+        flex-direction: row;
+    }
+  }

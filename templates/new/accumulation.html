@@ -1,0 +1,108 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+  <main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Jamg'arma</h2>
+          <ol>
+            <li><a href="index.html">Asosiy sahifa</a></li>
+            <li>Jamg'arma</li>
+          </ol>
+        </div>
+
+      </div>
+      <style>
+        .card-header {
+            background-color: #ff705b; color: white;
+        }
+        .card{
+            border:none;
+        }
+        .btn-primary{
+            background-color: #ff705b; color: white;
+            border-color: #ff705b;
+        }
+        .btn-primary:hover{
+            background-color: #ff4023;
+            border-color: #ff705b;
+        }
+        hr{
+            color: #ff4023;
+        }
+      </style>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container">
+        {% for message in messages %}
+        <div style="margin-bottom: 30px;" class="col-sm-12">
+          <div  class="alert fade alert-simple {% if message.tags == 'success' %} alert-{{message.tags }} {% else %} alert-danger {% endif %} alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+            <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+            {{message}}
+          </div>
+        </div>
+      {% endfor %}
+        <section id="contact" class="contact" >
+            <div class="container" data-aos="fade-up">
+              <div class="section-title">
+                <p>Jamg'armalar ro'yxati</p>
+              </div>
+              <div class="row" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-10 mt-2 mt-lg-0 d-flex align-items-stretch" style="margin: 0 auto;" >
+                  <div  class="php-email-form">
+                  {% for jamgarma in jamgarmas %}
+                    <div class="card" >
+                        <div class="card-body">
+                          <h5 class="card-title">{{jamgarma.name}}</h5>
+                          <p class="card-text">{% autoescape off %}{{jamgarma.info}}{% endautoescape %} </p>
+                          <p class="card-text">Kerak bo'lgan mablag': {{jamgarma.needed_cash}} so'm</p>
+                          <p class="card-text">Qolgan mablag': {{jamgarma.remain}} so'm</p>
+                          <p class="card-text" style="float:right;">{{jamgarma.date}}</p>
+                          <a href="{% url 'main:accomulation_details' jamgarma.id %}" class="btn btn-primary">Batafsil ma'lumot</a>
+                        </div>
+                        <hr>
+                    </div>
+                  {% endfor %}
+                    </div>
+                </div>
+                <style>
+                    .pagination li a{
+                        color: #ff705b;
+                    }
+                    .pagination li a:hover{
+                        color: #ff4023;
+                    }
+                </style>
+                <nav style="margin: 0 auto; display: flex; justify-content: center; margin-top: 20px;">
+                    <ul style="margin: 0 auto; " class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" >
+                          <span>&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span>&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                <p class="text-center mt-3">Bu bo'limdan o'zingizga kerakli bo'lim tanlay o'lmadizmi unda bizni xayriya bo'limiga o'ting <a href="charity.html"> xayriya bo'limi</a></p>
+              </div>
+        
+            </div>
+          </section>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% endblock %}
